@@ -1,0 +1,17 @@
+{% extends 'poll/poll_base.html' %}
+
+{%  block content %}
+<h1>Choose your question  !!</h1>
+    {% if latest_questions %}
+        <ul>
+            {% for question in latest_questions %}
+                <!--<li><a href="/poll/{{question.id}}"><b>{{question.question_text}}</b></a></br></li>--> <!-- Or Use Below -->
+                <li><a href={% url "poll:detail" question.id %}><b>{{question.var_question_description}}</b></a></br></li>
+                <!-- Note: Using the namespace "poll" so that the 'detail' view should be from the "poll" application.
+                This is to avoid namespace collision between multiple apps having same view name. -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You don't have any questions. Please add some.</p>
+    {% endif %}
+{% endblock %}

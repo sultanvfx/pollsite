@@ -1,0 +1,22 @@
+{% extends 'poll/poll_base.html' %}
+
+{%  block content %}
+    <h1>{{question.question_text}}</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <form action="{% url 'poll:vote' question.id %}" method="POST">
+        {% csrf_token %}  <!-- Note: Required to create this when we using POST request-->
+
+        <select class="form-control">
+             {% for choice in question.choice_set.all %}
+                <option value="{{ choice.choice_text }}">{{ choice.choice_text }}</option>
+             {% endfor %}
+        </select>
+
+        <input type="submit" class="btn btn-success" value="vote"/>
+    </form>
+    <br>
+    <a href="{% url 'poll:poll_index_page' %}"><- Back to question list</a>
+
+{% endblock %}

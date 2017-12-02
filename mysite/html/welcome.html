@@ -1,0 +1,10 @@
+{% extends 'base_loggedin.html' %}
+
+{% block top %}
+    <h1>Below are the various polls.</h1>
+    <h2>Please select poll of your choice!!!</h2>
+{% endblock %}
+
+{% block content %}
+<a href={% url "poll:poll_index_page"%}>Poll 2017</a>
+{% endblock %}

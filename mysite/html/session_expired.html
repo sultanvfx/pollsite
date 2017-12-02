@@ -1,0 +1,6 @@
+{% extends 'base_login.html' %}
+
+{% block top %}
+    <h1>Session expired. Kindly login again. </h1>
+    <a href="{% url 'login' %}">Login</a>
+{% endblock %}

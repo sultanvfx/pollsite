@@ -1,0 +1,23 @@
+{% extends 'poll/poll_base.html' %}
+
+{% block top %}
+<h1>Welcome to the poll!!!</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="POST" class="post-form">{% csrf_token %}
+        {% for qid, question in questions_dict.items %}
+            <div>
+                <label >{{ qid }}.</label>
+                <label >{{ question }}</label>
+                <select style="width: 122px;">
+                    {% for each_user_dict in ldap_user_info_dict_list %}
+                        <option value="{{ each_user_dict.uid }}">{{ each_user_dict.cn }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        {% endfor %}
+        <button type="submit">submit</button>
+        <a href="{% url 'login_page' %}">Log Out</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'base_login.html' %}
+
+{% block content %}
+    <h1>Sorry, incorrect Login details.</h1>
+    <h1>Please try again.</h1>
+    <a href="{% url 'login' %}">Login</a>
+{% endblock %}

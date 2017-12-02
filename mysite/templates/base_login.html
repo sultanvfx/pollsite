@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome to the Poll !!!</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Vollkorn+SC" rel="stylesheet">
+        <!-- Fonts -->
+        <!--<link href="/home/sultan.bal/Desktop/website/pollsite_test/mysite/static/fonts/font-awesome-4.7.0/css/font-awesome.css">-->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    </head>
+
+    <!--<style>-->
+        <!--body{-->
+        <!--padding: 70px;-->
+        <!--}-->
+    <!--</style>-->
+
+    <body>
+
+    <!-- Navbar -->
+    {% include "navbar.html" %}
+
+    <!-- Container1 -->
+        <!--<header>-->
+            <!--<div class="page-header">-->
+                {% block top %}
+                {% endblock %}
+            <!--</div>-->
+        <!--</header>-->
+        <!--<div class="content container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-8">-->
+                <!--{% block content %}  &lt;!&ndash; this area which we tagged as "block" will have your individual .html file's data &ndash;&gt;-->
+                <!--{% endblock %}  &lt;!&ndash; any .html file, wanting to use this base.html file, must use the tag "block" to import this code in their .html file &ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+    <!--{% include "footer.html" %}-->
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    </body>
+
+</html>

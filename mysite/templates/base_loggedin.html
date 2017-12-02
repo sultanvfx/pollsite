@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Welcome to the Poll 2017</title>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+        <!--<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!--<link rel="stylesheet" href="{% static 'css/mysite.css' %}">-->
+    </head>
+    <body>
+        <header>
+            <div class="page-header">
+                <!--<a href="{% url 'logout_page' %}" class="top-menu">LogOut<span class="glyphicon glyphicon-log-out"></span></a>-->
+                <a href="{% url 'logout_page' %}" class="btn btn-info btn-lg">LogOut<span class="glyphicon glyphicon-log-out"></span></a>
+                {% block top %}
+                {% endblock %}
+            </div>
+        </header>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}  <!-- this area which we tagged as "block" will have your individual .html file's data -->
+                {% endblock %}  <!-- any .html file, wanting to use this base.html file, must use the tag "block" to import this code in their .html file -->
+                </div>
+            </div>
+        </div>
+    {% include "footer.html" %}
+    </body>
+
+</html>
+
